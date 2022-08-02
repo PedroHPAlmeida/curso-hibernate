@@ -3,6 +3,7 @@ package br.com.alura.loja.testes;
 import br.com.alura.loja.dao.CategoriaDao;
 import br.com.alura.loja.dao.ProdutoDao;
 import br.com.alura.loja.model.Categoria;
+import br.com.alura.loja.model.CategoriaId;
 import br.com.alura.loja.model.Produto;
 import br.com.alura.loja.util.JPAUtil;
 
@@ -38,6 +39,7 @@ public class CadastroDeProduto {
 
         categoriaDao.cadastrar(celulares);
         produtoDao.cadastrar(celular);
+        entityManager.find(Categoria.class, new CategoriaId("CELULARES", "xpto"));
 
         entityManager.getTransaction().commit();
         entityManager.close();
